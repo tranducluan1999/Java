@@ -34,7 +34,7 @@ public class AppTest {
         BookManagement bookManagement = new BookManagement(book); // gans
         System.out.println(bookManagement);
         bookManagement.count();
-        bookManagement.print();
+        bookManagement.print();//
 
 
 

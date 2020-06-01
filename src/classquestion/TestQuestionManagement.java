@@ -44,5 +44,6 @@ public class TestQuestionManagement {
         QuestionManagement questionManagement = new QuestionManagement(question);
         System.out.println(questionManagement);
         questionManagement.point();
+        questionManagement.searchAnswer();
     }
 }

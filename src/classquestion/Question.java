@@ -1,25 +1,26 @@
 package classquestion;
 
+import java.util.Scanner;
 
-public  class Question{
+public class Question {
     private String content;
-    private String first;
-    private String second;
-    private String third;
-    private String fourth;
+    private String firstanswer;
+    private String secondanswer;
+    private String thirdanswer;
+    private String fourthanswer;
     private String trueanswer;
     private String level;
 
     public Question() {
     }
 
-    public Question(String content, String first, String second, String third, String fourth,String trueanswer, String level) {
+    public Question(String content, String firstanswer, String secondanswer, String thirdanswer, String fourthanswer, String trueanswer, String level) {
         this.content = content;
-        this.first = first;
-        this.second = second;
-        this.third = third;
-        this.fourth = fourth;
-        this.trueanswer =trueanswer;
+        this.firstanswer = firstanswer;
+        this.secondanswer = secondanswer;
+        this.thirdanswer = thirdanswer;
+        this.fourthanswer = fourthanswer;
+        this.trueanswer = trueanswer;
         this.level = level;
     }
 
@@ -31,79 +32,66 @@ public  class Question{
         this.content = content;
     }
 
-    public String getFirst() {
-        return first;
+    public String getFirstanswer() {
+        return firstanswer;
     }
 
-    public void setFirst(String first) {
-        this.first = first;
+    public void setFirstanswer(String firstanswer) {
+        this.firstanswer = firstanswer;
     }
 
-    public String getSecond() {
-        return second;
+    public String getSecondanswer() {
+        return secondanswer;
     }
 
-    public void setSecond(String second) {
-        this.second = second;
+    public void setSecondanswer(String secondanswer) {
+        this.secondanswer = secondanswer;
     }
 
-    public String getThird() {
-        return third;
+    public String getThirdanswer() {
+        return thirdanswer;
     }
 
-    public void setThird(String third) {
-        this.third = third;
+    public void setThirdanswer(String thirdanswer) {
+        this.thirdanswer = thirdanswer;
     }
 
-    public String getFourth() {
-        return fourth;
+    public String getFourthanswer() {
+        return fourthanswer;
     }
 
-    public void setFourth(String fourth) {
-        this.fourth = fourth;
+    public void setFourthanswer(String fourthanswer) {
+        this.fourthanswer = fourthanswer;
     }
-    public String getTrueanswer()
-    {
+
+    public String getTrueanswer() {
         return trueanswer;
     }
-    public void setTrueanswer()
-    {
+
+    public void setTrueanswer(String trueanswer) {
         this.trueanswer = trueanswer;
     }
-    public String getLevel()
-    {
-        return level;
 
+    public String getLevel() {
+        return level;
     }
-    public void setLevel()
-    {
+
+    public void setLevel(String level) {
         this.level = level;
     }
-
 
     @Override
     public String toString() {
         return "Question{" +
                 "content='" + content + '\'' +
-                ", first='" + first + '\'' +
-                ", second='" + second + '\'' +
-                ", third='" + third + '\'' +
-                ", fourth='" + fourth + '\'' +
+                ", firstanswer='" + firstanswer + '\'' +
+                ", secondanswer='" + secondanswer + '\'' +
+                ", thirdanswer='" + thirdanswer + '\'' +
+                ", fourthanswer='" + fourthanswer + '\'' +
                 ", trueanswer='" + trueanswer + '\'' +
                 ", level='" + level + '\'' +
                 '}';
     }
 
-    public boolean checkanswer()
-    {
-        if(this.trueanswer.equalsIgnoreCase(this.fourth))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
 
-    }
 }

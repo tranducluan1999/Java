@@ -3,47 +3,46 @@ package classquestion;
 import java.util.Scanner;
 
 public class TestQuestionManagement {
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc=  new Scanner(System.in);
 
-        System.out.println(" Import the number of question: ");
+        System.out.println("  Enter the number of Question: ");
         int n = sc.nextInt();
         sc.nextLine();
 
         Question question[] = new Question[n];
-
-        for(int i=0;i<question.length;i++)
+        for(int i=0 ; i< question.length;i++)
         {
-            System.out.println(" Import infomation for question: " + (i+1 ));
+            System.out.println(" Enter the information of the " + (i+1) + " Question");
 
-            System.out.println(" Import content: ");
+            System.out.println(" Content: ");
             String content = sc.nextLine();
 
-            System.out.println(" First Answer: ");
-            String fa = sc.nextLine();
+            System.out.println("  First Answer: ");
+            String first = sc.nextLine();
 
             System.out.println(" Second Answer: ");
-            String sa = sc.nextLine();
+            String second = sc.nextLine();
 
             System.out.println(" Third Answer: ");
-            String ta = sc.nextLine();
+            String third = sc.nextLine();
 
             System.out.println(" Fourth Answer: ");
-            String fanswer = sc.nextLine();
+            String fourth = sc.nextLine();
 
             System.out.println(" True Answer: ");
-            String tr = sc.nextLine();
+            String trueanswer = sc.nextLine();
 
             System.out.println(" Level: ");
             String level = sc.nextLine();
-
-            question[i]  = new Question(content, fa, sa, ta, fanswer, tr, level);
-
+            question[i] = new Question(content, first, second, third, fourth, trueanswer, level );
         }
+
         QuestionManagement questionManagement = new QuestionManagement(question);
         System.out.println(questionManagement);
-        questionManagement.point();
-        questionManagement.searchAnswer();
+        questionManagement.ktra();
+        questionManagement.showTrueAnswer();
+        questionManagement.score();
+
     }
 }

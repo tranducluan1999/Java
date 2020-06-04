@@ -1,25 +1,28 @@
 package classquestion;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class QuestionManagement {
-    private int totalquestion;
-    private Question[]questions;
+    private int totalQuestion;
+    private Question []questions;
 
     public QuestionManagement() {
     }
 
     public QuestionManagement(Question[] questions) {
         this.questions = questions;
-        this.totalquestion = this.questions.length;
+        this.totalQuestion= this.questions.length;
+
+
     }
 
-    public int getTotalquestion() {
-        return totalquestion;
+    public int getTotalQuestion() {
+        return totalQuestion;
     }
 
-    public void setTotalquestion(int totalquestion) {
-        this.totalquestion = totalquestion;
+    public void setTotalQuestion(int totalQuestion) {
+        this.totalQuestion = totalQuestion;
     }
 
     public Question[] getQuestions() {
@@ -33,34 +36,53 @@ public class QuestionManagement {
     @Override
     public String toString() {
         return "QuestionManagement{" +
-                "totalquestion=" + totalquestion +
+                "totalQuestion=" + totalQuestion +
                 ", questions=" + Arrays.toString(questions) +
                 '}';
     }
-
-    public  int point()
+    // ktra câu đúng
+    public void ktra()
     {
-        int point =0;
-        for(int i=0; i<totalquestion;i++) {
-            if (questions[i].checkanswer() == true)
-            {
-                point = point+10;
-            }
-        }
-        System.out.println(" Mark: " + point);
-        return point;
-
-    }
-    public  void searchAnswer()
-    {
-        for(int i=0; i<totalquestion;i++)
+        for(int i=0;i<totalQuestion;i++)
         {
-
-            if(questions[i].getLevel()=="easy")
+            if (this.questions[i].getTrueanswer().equalsIgnoreCase(this.questions[i].getFirstanswer()))
             {
-                System.out.println(questions[i]);
-            }
+                System.out.println(" The question" + (i+1) + " is" + " true");
 
+            }
+            else
+            {
+                System.out.println(" The question " + (i+1) + " false");
+            }
+        }
+
+    }
+    //tính điểm
+    public int score()
+    {
+        int k =0,diem=0;
+        for(int i=0;i<totalQuestion;i++)
+        {
+            if (this.questions[i].getTrueanswer().equalsIgnoreCase(this.questions[i].getFirstanswer()))
+            {
+                k++;
+
+            }
+        }
+        diem = k*10;
+        System.out.println("Score: "+ diem );
+        return diem;
+
+    }
+    // show đáp  án đúng
+    public void showTrueAnswer()
+    {
+        for (int i=0;i<totalQuestion;i++) {
+            if (this.questions[i].getTrueanswer().equalsIgnoreCase(this.questions[i].getFirstanswer()))
+            {
+                System.out.println(" True Answer of the " + i + " question is: " + questions[i].getTrueanswer());
+            }
         }
     }
+
 }
